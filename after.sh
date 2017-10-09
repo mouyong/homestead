@@ -15,7 +15,7 @@
 
 #sudo sslocal -s server -k jiandanai -d restart
 
-sudo sed -in '/try_files/i\\t\tif (!-f $request_filename) {\n\t\trewrite ^(.*)$ /index.php?_rp_=$1 last;\n\t\tbreak;\n}' /etc/nginx/sites-enabled/www.in.app
+sudo sed -in '/try_files/i\\t\tif (!-f $request_filename) {\n\t\trewrite ^(.*)$ /index.php?_rp_=$1 last;\n\t\tbreak;\n\t\t}' /etc/nginx/sites-enabled/www.in.app
 
 sed -in '/proxy/'d ~/.bashrc
 #sed -in '$a\export all_proxy=http://127.0.0.1:1080' ~/.bashrc
